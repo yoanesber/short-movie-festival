@@ -1,4 +1,4 @@
-##API to generate Access Token
+## API to generate Access Token
 
 You need to encode your username and password to base64 and make a GET request to GET http://localhost:3000/token. Here are the complete steps:
 * Visit base64encode.org
@@ -27,11 +27,11 @@ You need to encode your username and password to base64 and make a GET request t
  -H "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR"`
 
 
-##API to register
+## API to register
 
 For searching, downloading, and voting movies  you love, you will need to first register by following request:
 
-###Example Request
+### Example Request
 
 `curl -X POST \
     "localhost:3000/users" \
@@ -40,7 +40,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
     -d "username=my_username&password=my_password&name=my_name"`
 
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -54,9 +54,9 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to login
+## API to login
 
-###Example Request
+### Example Request
 
 `curl -X PATCH \
     "http://localhost:3000/users/act/login" \
@@ -64,7 +64,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
     -H "Content-Type: application/x-www-form-urlencoded" \
     -d "username=my_username&password=my_password"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -78,16 +78,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to logout
+## API to logout
 
-###Example Request
+### Example Request
 
 `curl -X PATCH \
     "http://localhost:3000/users/act/logout" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -99,9 +99,9 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to create and upload movies. Required information related with a movies are at least title, description, duration, artists, genres, watch URL (which points to the uploaded movie file)
+## API to create and upload movies. Required information related with a movies are at least title, description, duration, artists, genres, watch URL (which points to the uploaded movie file)
 
-###Example Request
+### Example Request
 
 `curl -X POST \
     "http://localhost:3000/movies" \
@@ -109,7 +109,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
     -H "Content-Type: application/x-www-form-urlencoded" \
     -d "title=Black Widow&description=Black Widow adalah film pahlawan super Amerika Serikat tahun 2020 yang didasarkan dari karakter Marvel Comics bernama sama. Film ini diproduksi Marvel Studios dan disalurkan Walt Disney Studios Motion Pictures. Film ini adalah film ke-24 Marvel Cinematic Universe&artists=Scarlett Johansson, Florence Pugh, Robert Downey, Jr., David Harbour&genres=ACT&watchUrl=https://www.youtube.com/watch?v=RxAtuMu_ph4&createdBy=1"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -128,9 +128,9 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to update movie
+## API to update movie
 
-###Example Request
+### Example Request
 
 `curl -X PATCH \
     "http://localhost:3000/movies/12" \
@@ -138,7 +138,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
     -H "Content-Type: application/x-www-form-urlencoded" \
     -d "title=Black Widow&description=Black Widow adalah film pahlawan super Amerika Serikat tahun 2020 yang didasarkan dari karakter Marvel Comics bernama sama. Film ini diproduksi Marvel Studios dan disalurkan Walt Disney Studios Motion Pictures. Film ini adalah film ke-24 Marvel Cinematic Universe&artists=Scarlett Johansson, Florence Pugh, Robert Downey, Jr., David Harbour&genres=HOR&watchUrl=https://www.youtube.com/watch?v=RxAtuMu_ph4&updatedBy=1"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -150,16 +150,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to list all movies with pagination
+## API to list all movies with pagination
 
-###Example Request
+### Example Request
 
 `curl -X GET \
     "http://localhost:3000/movies?l=1&p1" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -182,16 +182,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to search movie by title/description/artists/genres
+## API to search movie by title/description/artists/genres
 
-###Example Request
+### Example Request
 
 `curl -X GET \
     "http://localhost:3000/movies?title=black" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -214,16 +214,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to see most viewed genre, as an admin
+## API to see most viewed genre, as an admin
 
-###Example Request
+### Example Request
 
 `curl -X GET \
     "localhost:3000/movies/mostviewed/by/genre/COM" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -270,16 +270,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to see most viewed movies, as an admin
+## API to see most viewed movies, as an admin
 
-###Example Request
+### Example Request
 
 `curl -X GET \
     "localhost:3000/movies/mostviewed/all" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 `{
     "status": "ok",
     "message": "querying successfully",
@@ -333,16 +333,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to vote a movie as an authenticated user
+## API to vote a movie as an authenticated user
 
-###Example Request
+### Example Request
 
 `curl -X POST \
     "localhost:3000/movies/act/vote/4?r=5" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -357,16 +357,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to unvote a movie as an authenticated user
+## API to unvote a movie as an authenticated user
 
-###Example Request
+### Example Request
 
 `curl -X PATCH \
     "localhost:3000/movies/act/unvote/4" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
@@ -379,16 +379,16 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
-##API to list all of the user’s voted movie
+## API to list all of the user’s voted movie
 
-###Example Request
+### Example Request
 
 `curl -X GET \
     "localhost:3000/movies/voted/all" \
     -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
     -H "Content-Type: application/x-www-form-urlencoded"`
 
-###Example Response
+### Example Response
 
 `{
     "status": "ok",
