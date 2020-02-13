@@ -14,7 +14,7 @@ Make sure you have these installed on your machine:
  
 
 ## Run the migration
-First of all, what we have to do is create a database withe the name **short-movie-festival**. After that, adjust the database configuration in the `config/config.js` file with your local database configuration. Then, run the migration files.
+First of all, what we have to do is create a database withe the name "**short-movie-festival**". After that, adjust the database configuration in the `config/config.js` file with your local database configuration. Then, run the migration files.
 Now to actually create that table in database you need to run **`sequelize db:migrate`**.
 
 
