@@ -3,7 +3,7 @@
 ## Prerequisites
 Make sure you have these installed on your machine:
 * Node.js
-* `npm` This comes with Node.js, but make sure you check if you have it anyway
+* **npm** This comes with Node.js, but make sure you check if you have it anyway
 * MySQL DB
 
 ## Technology
@@ -14,18 +14,18 @@ Make sure you have these installed on your machine:
  
 
 ## Run the migration
-First of all, what we have to do is create a database withe the name short-movie-festival. After that, adjust the database configuration in the `config/config.js` file with your local database configuration. Then, run the migration files.
-Now to actually create that table in database you need to run `sequelize db:migrate`.
+First of all, what we have to do is create a database withe the name **short-movie-festival**. After that, adjust the database configuration in the `config/config.js` file with your local database configuration. Then, run the migration files.
+Now to actually create that table in database you need to run **`sequelize db:migrate`**.
 
 
 ## Run the seeders
 To manage all data migrations you can use seeders. Seed files are some change in data that can be used to populate database table with sample data or test data.
-To do that we need to run a simple command `sequelize db:seed:all`.
+To do that we need to run a simple command **`sequelize db:seed:all`**.
 
 
 ## API to generate Access Token
 
-You need to encode your username and password to base64 and make a GET request to GET http://localhost:3000/token. Here are the complete steps:
+You need to encode your username and password to base64 and make a GET request to GET **`http://localhost:3000/token`**. Here are the complete steps:
 * Visit base64encode.org
 * Insert your username and password with the following format: username:password
 * Encode to a base64 string. The encoded string will be like this: dXNlcm5hbWU6cGFzc3dvcmQ
