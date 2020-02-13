@@ -1,3 +1,7 @@
+## Run the migration
+You need to run the 
+Now to actually create that table in database you need to run `db:migrate command`.
+
 ##API to generate Access Token
 
 You need to encode your username and password to base64 and make a GET request to GET http://localhost:3000/token. Here are the complete steps:
@@ -6,25 +10,25 @@ You need to encode your username and password to base64 and make a GET request t
 * Encode to a base64 string. The encoded string will be like this: dXNlcm5hbWU6cGFzc3dvcmQ
 * Make a GET request to http://localhost:3000/token and use the encoded string as the Basic Authorization Token. Example request:
 
-`curl -X GET \
-    "http://localhost:3000/token" \
-    -H "Authorization: Basic YW5kcmV3aGl0ZToxMjM0NTY3OA" \
-    -H 'Content-Length: 0' \
-    -H 'User-Agent: PostmanRuntime/7.17.1'`
+`curl -X GET \`
+    `"http://localhost:3000/token" \`
+    `-H "Authorization: Basic YW5kcmV3aGl0ZToxMjM0NTY3OA" \`
+    `-H 'Content-Length: 0' \`
+    `-H 'User-Agent: PostmanRuntime/7.17.1'`
 
 
 * If successful, you will receive an access token response. When an access token expires, you should request a new token. Example response:
 
-`{
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFuZHJld2hpdGUiLCJjbGllbnRTZWNyZXQiOiIkMmIkMTAkWk5nZzRPbUlsMU5ZZGJaLlY1YwM0dGaHpmcHBZWEhNVmV0VVFkdlciLCJleHAiOjE1ODE2MTMzNDksImlhdCI6MTU4MTU4ODEyN30.h298Fy-_gwCoROo6dRL40CJrAuzCK8FUAXyvRvHSIHA",
-    "expires_in": "2020-02-13T17:02:29.593Z"
-}`
+`{`
+    `"access_token":` `"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFuZHJld2hpdGUiLCJjbGllbnRTZWNyZXQiOiIkMmIkMTAkWk5nZzRPbUlsMU5ZZGJaLlY1YwM0dGaHpmcHBZWEhNVmV0VVFkdlciLCJleHAiOjE1ODE2MTMzNDksImlhdCI6MTU4MTU4ODEyN30.h298Fy-_gwCoROo6dRL40CJrAuzCK8FUAXyvRvHSIHA",`
+    `"expires_in": "2020-02-13T17:02:29.593Z"`
+`}`
 
 * You can use the access_token to make HTTP request, for example:
 
-`curl -X GET \ 
- "http://localhost:3000/movies" \
- -H "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR"`
+`curl -X GET \ `
+ `"http://localhost:3000/movies" \`
+ `-H "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR"`
 
 
 ##API to register
@@ -33,36 +37,36 @@ For searching, downloading, and voting movies  you love, you will need to first 
 
 ###Example Request
 
-`curl -X POST \
-    "localhost:3000/users" \
-    -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -d "username=my_username&password=my_password&name=my_name"`
+`curl -X POST \`
+    `"localhost:3000/users" \`
+    `-H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \`
+    `-H "Content-Type: application/x-www-form-urlencoded" \`
+    `-d "username=my_username&password=my_password&name=my_name"`
 
 
 ###Example Response
 
-`{
-    "status": "ok",
-    "messages": "data successfully created",
-    "data": {
-        "username": "my_username",
-        "access_token": "eyJhbGciOiJIUzI1NiI.yMTgwLCJpYXQiOjE1ODE1OTc4NjZ9.9NWwTEGbIVMSxGEYVY_5AP47k",
-        "expires_in": "2020-02-16T19:43:00.732Z",
-        "registered_date": "2020-02-13T12:44:26.265Z"
-    }
-}`
+`{`
+    `"status": "ok",`
+    `"messages": "data successfully created",`
+    `"data": {`
+        `"username": "my_username",`
+        `"access_token":` `"eyJhbGciOiJIUzI1NiI.yMTgwLCJpYXQiOjE1ODE1OTc4NjZ9.9NWwTEGbIVMSxGEYVY_5AP47k",`
+        `"expires_in": "2020-02-16T19:43:00.732Z",`
+        `"registered_date": "2020-02-13T12:44:26.265Z"`
+    `}`
+`}`
 
 
 ##API to login
 
 ###Example Request
 
-`curl -X PATCH \
-    "http://localhost:3000/users/act/login" \
-    -H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -d "username=my_username&password=my_password"`
+`curl -X PATCH \`
+    `"http://localhost:3000/users/act/login" \`
+    `-H "Authorization: Token eyJhbGciOiJIUzI1NiIkpXVCJ9.eyJRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR" \`
+    `-H "Content-Type: application/x-www-form-urlencoded" \`
+    `-d "username=my_username&password=my_password"`
 
 ###Example Response
 
