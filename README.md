@@ -11,15 +11,17 @@ Make sure you have these installed on your machine:
 * MySQL DB
 * Sequelize
 * Json Web Token
-
+ 
 
 ## Run the migration
-First of all, all we have to do is run the migration files.
+First of all, what we have to do is create the a database withe the name short-movie-festival. After that, adjust the database configuration in the `config/config.js` file with your local database configuration. Then, run the migration files.
 Now to actually create that table in database you need to run `sequelize db:migrate`.
+
 
 ## Run the seeders
 To manage all data migrations you can use seeders. Seed files are some change in data that can be used to populate database table with sample data or test data.
 To do that we need to run a simple command `sequelize db:seed:all`.
+
 
 ## API to generate Access Token
 
@@ -50,6 +52,7 @@ You need to encode your username and password to base64 and make a GET request t
  -H "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFuZHJld2hpdG.NdCtoW6apBSedR"`
 
 
+
 ## API to register
 
 For searching, downloading, and voting movies  you love, you will need to first register by following request:
@@ -77,6 +80,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
+
 ## API to login
 
 ### Example Request
@@ -101,6 +105,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
+
 ## API to logout
 
 ### Example Request
@@ -120,6 +125,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
         "logoutdate": "2020-02-13T20:07:37.051Z"
     }
 }`
+
 
 
 ## API to create and upload movies. Required information related with a movies are at least title, description, duration, artists, genres, watch URL (which points to the uploaded movie file)
@@ -151,6 +157,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
+
 ## API to update movie
 
 ### Example Request
@@ -171,6 +178,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
         "updateddate": "2020-02-13T20:32:49.265Z"
     }
 }`
+
 
 
 ## API to list all movies with pagination
@@ -205,6 +213,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
+
 ## API to search movie by title/description/artists/genres
 
 ### Example Request
@@ -235,6 +244,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
         }
     ]
 }`
+
 
 
 ## API to see most viewed genre, as an admin
@@ -291,6 +301,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
         ]
     }
 }`
+
 
 
 ## API to see most viewed movies, as an admin
@@ -356,6 +367,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
+
 ## API to vote a movie as an authenticated user
 
 ### Example Request
@@ -380,6 +392,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
 }`
 
 
+
 ## API to unvote a movie as an authenticated user
 
 ### Example Request
@@ -400,6 +413,7 @@ For searching, downloading, and voting movies  you love, you will need to first 
         "unvotedate": "2020-02-13T21:19:30.829Z"
     }
 }`
+
 
 
 ## API to list all of the user’s voted movie
